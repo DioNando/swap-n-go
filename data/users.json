@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "phoneNumber": "+123456789",
+    "password": "hashed_password",
+    "rating": 4.5,
+    "numberOfReviews": 20,
+    "profilePictureUrl": "https://example.com/profile/john.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "phoneNumber": "+987654321",
+    "password": "hashed_password",
+    "rating": 4.8,
+    "numberOfReviews": 35,
+    "profilePictureUrl": "https://example.com/profile/jane.jpg"
+  }
+]

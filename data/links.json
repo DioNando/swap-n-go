@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Mes recherches",
+    "link": "/",
+    "icon": "mdi-bell"
+  },
+  {
+    "title": "Favoris",
+    "link": "/users",
+    "icon": "mdi-heart"
+  },
+  {
+    "title": "Messages",
+    "link": "/messages",
+    "icon": "mdi-message-processing"
+  },
+  {
+    "title": "Se connecter",
+    "link": "/users",
+    "icon": "mdi-account"
+  }
+]

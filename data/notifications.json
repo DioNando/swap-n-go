@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "userId": "1",
+    "content": "Your order has been shipped.",
+    "createdAt": "2024-12-02T15:00:00Z",
+    "isRead": false
+  },
+  {
+    "id": "2",
+    "userId": "2",
+    "content": "You have a new message from John Doe.",
+    "createdAt": "2024-12-03T16:00:00Z",
+    "isRead": true
+  }
+]

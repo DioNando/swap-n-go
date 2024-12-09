@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "userId": "1",
+    "houseNumber": "123",
+    "street": "Main Street",
+    "zipCode": "12345",
+    "city": "New York",
+    "country": "USA"
+  },
+  {
+    "id": "2",
+    "userId": "2",
+    "houseNumber": "456",
+    "street": "Second Avenue",
+    "zipCode": "67890",
+    "city": "San Francisco",
+    "country": "USA"
+  }
+]

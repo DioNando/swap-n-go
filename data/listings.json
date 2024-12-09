@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "userId": "1",
+    "title": "iPhone 13 Pro",
+    "description": "Brand new iPhone 13 Pro for sale.",
+    "category": "Electronics",
+    "price": 999.99,
+    "isExchangeable": false,
+    "location": false,
+    "condition": "NEW",
+    "createdAt": "2024-11-30T09:00:00Z",
+    "updatedAt": "2024-12-01T10:00:00Z",
+    "status": "ACTIVE"
+  },
+  {
+    "id": "2",
+    "userId": "2",
+    "title": "Used Laptop",
+    "description": "Dell XPS 13, lightly used.",
+    "category": "Computers",
+    "price": 600.0,
+    "isExchangeable": true,
+    "location": false,
+    "condition": "USED",
+    "createdAt": "2024-11-25T14:00:00Z",
+    "updatedAt": "2024-11-27T15:00:00Z",
+    "status": "ACTIVE"
+  }
+]

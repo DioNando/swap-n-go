@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "listingId": "1",
+    "imageUrl": "https://example.com/images/iphone13.jpg"
+  },
+  {
+    "id": "2",
+    "listingId": "2",
+    "imageUrl": "https://example.com/images/dellxps.jpg"
+  }
+]

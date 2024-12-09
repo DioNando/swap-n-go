@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "name": "Électronique",
+    "parentCategoryId": null
+  },
+  {
+    "id": 2,
+    "name": "Ordinateurs",
+    "parentCategoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "Ordinateurs portables",
+    "parentCategoryId": 2
+  },
+  {
+    "id": 4,
+    "name": "Smartphones",
+    "parentCategoryId": 1
+  },
+  {
+    "id": 5,
+    "name": "Téléviseurs",
+    "parentCategoryId": 1
+  },
+  {
+    "id": 6,
+    "name": "Appareils électroménagers",
+    "parentCategoryId": null
+  },
+  {
+    "id": 7,
+    "name": "Réfrigérateurs",
+    "parentCategoryId": 6
+  },
+  {
+    "id": 8,
+    "name": "Fours",
+    "parentCategoryId": 6
+  },
+  {
+    "id": 9,
+    "name": "Micro-ondes",
+    "parentCategoryId": 6
+  },
+  {
+    "id": 10,
+    "name": "Blenders",
+    "parentCategoryId": 6
+  },
+  {
+    "id": 11,
+    "name": "Vêtements",
+    "parentCategoryId": null
+  },
+  {
+    "id": 12,
+    "name": "Homme",
+    "parentCategoryId": 11
+  },
+  {
+    "id": 13,
+    "name": "Femme",
+    "parentCategoryId": 11
+  },
+  {
+    "id": 14,
+    "name": "Enfants",
+    "parentCategoryId": 11
+  },
+  {
+    "id": 15,
+    "name": "Chaussures",
+    "parentCategoryId": 11
+  },
+  {
+    "id": 16,
+    "name": "Chaussures pour hommes",
+    "parentCategoryId": 15
+  },
+  {
+    "id": 17,
+    "name": "Chaussures pour femmes",
+    "parentCategoryId": 15
+  },
+  {
+    "id": 18,
+    "name": "Vêtements de sport",
+    "parentCategoryId": 11
+  },
+  {
+    "id": 19,
+    "name": "Mobilier de maison",
+    "parentCategoryId": null
+  },
+  {
+    "id": 20,
+    "name": "Salon",
+    "parentCategoryId": 19
+  },
+  {
+    "id": 21,
+    "name": "Canapés",
+    "parentCategoryId": 20
+  },
+  {
+    "id": 22,
+    "name": "Tables basses",
+    "parentCategoryId": 20
+  },
+  {
+    "id": 23,
+    "name": "Chambre à coucher",
+    "parentCategoryId": 19
+  },
+  {
+    "id": 24,
+    "name": "Lits",
+    "parentCategoryId": 23
+  },
+  {
+    "id": 25,
+    "name": "Armoires",
+    "parentCategoryId": 23
+  },
+  {
+    "id": 26,
+    "name": "Mobilier de jardin",
+    "parentCategoryId": 19
+  },
+  {
+    "id": 27,
+    "name": "Chaises de jardin",
+    "parentCategoryId": 26
+  },
+  {
+    "id": 28,
+    "name": "Tables de jardin",
+    "parentCategoryId": 26
+  },
+  {
+    "id": 29,
+    "name": "Équipements de sport",
+    "parentCategoryId": null
+  },
+  {
+    "id": 30,
+    "name": "Fitness",
+    "parentCategoryId": 29
+  },
+  {
+    "id": 31,
+    "name": "Tapis de yoga",
+    "parentCategoryId": 30
+  },
+  {
+    "id": 32,
+    "name": "Haltères",
+    "parentCategoryId": 30
+  },
+  {
+    "id": 33,
+    "name": "Cyclisme",
+    "parentCategoryId": 29
+  },
+  {
+    "id": 34,
+    "name": "Vélos",
+    "parentCategoryId": 33
+  },
+  {
+    "id": 35,
+    "name": "Accessoires de vélo",
+    "parentCategoryId": 33
+  },
+  {
+    "id": 36,
+    "name": "Camping",
+    "parentCategoryId": 29
+  },
+  {
+    "id": 37,
+    "name": "Tentes",
+    "parentCategoryId": 36
+  },
+  {
+    "id": 38,
+    "name": "Sacs de couchage",
+    "parentCategoryId": 36
+  },
+  {
+    "id": 39,
+    "name": "Jeux vidéo",
+    "parentCategoryId": null
+  },
+  {
+    "id": 40,
+    "name": "Consoles",
+    "parentCategoryId": 39
+  },
+  {
+    "id": 41,
+    "name": "Jeux",
+    "parentCategoryId": 39
+  },
+  {
+    "id": 42,
+    "name": "Accessoires pour consoles",
+    "parentCategoryId": 39
+  }
+]
