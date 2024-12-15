@@ -11,7 +11,9 @@
       <v-container>
         <div class="nav__toolbar d-flex flex-column">
           <div class="d-flex justify-space-between ga-4 align-center mb-3">
-            <img src="/assets/img/swap_1.svg" class="nav__logo" />
+            <NuxtLink to="/" class="d-flex align-center justify-end">
+              <img src="/assets/img/swap_1.svg" class="nav__logo" />
+            </NuxtLink>
             <ButtonAddListing />
             <FormSearchListing class="flex-1-1" />
             <NavbarTool />

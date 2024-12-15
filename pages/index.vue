@@ -1,6 +1,7 @@
 <template>
   <v-container class="d-flex flex-column ga-4">
     <CardCallToAction />
+    <UiTopCategory />
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam
       quae maiores neque obcaecati impedit minima! Debitis explicabo veritatis

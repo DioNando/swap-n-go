@@ -16,7 +16,7 @@
   },
   {
     "title": "Se connecter",
-    "link": "/users",
+    "link": "/login",
     "icon": "mdi-account"
   }
 ]

@@ -29,7 +29,9 @@
             icon="mdi-menu"
             class="drawer__btn--open ms-4"
           ></v-btn>
-          <img src="/assets/img/swap_1.svg" class="nav__logo" />
+          <NuxtLink to="/" class="d-flex align-center justify-end">
+            <img src="/assets/img/swap_1.svg" class="nav__logo" />
+          </NuxtLink>
         </div>
         <FormSearchListing class="flex-1-1" />
       </div>
