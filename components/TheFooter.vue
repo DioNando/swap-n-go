@@ -13,8 +13,8 @@
         >
           {{ l.title }}
         </NuxtLink>
+        <ButtonTheme />
       </div>
-      <ButtonTheme class="mb-2" />
       <div class="text-body-1">Lorem ipsum dolor sit amet.</div>
       <div class="text-center text-disabled pa-4">
         <p>Made with <v-icon icon="mdi-heart"></v-icon></p>
@@ -57,9 +57,10 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 1rem;
+  align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  padding: 1rem;
   text-align: center;
 
   @media only screen and (min-width: 600px) {
@@ -71,7 +72,7 @@ footer {
 .router-link {
   font-weight: bold;
   transition: 200ms;
-  font-size: clamp(0.25rem, 3vw, 1.5rem);
+  font-size: 1rem;
 
   &-exact-active {
     color: $secondary;

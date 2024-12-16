@@ -2,7 +2,7 @@
   <section>
     <TextsTitle :title="'Aside.'" />
     <div class="cards">
-      <CardAside
+      <CardLogin
         v-for="(item, index) in selectedPhotos"
         :key="index"
         :data="item"
@@ -26,7 +26,7 @@ onMounted(() => {
   $anime({
     targets: ".card__element",
     opacity: [0, 1],
-    translateY: [200, 0],
+    // translateY: [200, 0],
     delay: anime.stagger(1000, { easing: "easeOutQuad", from: "first" }),
   });
 });

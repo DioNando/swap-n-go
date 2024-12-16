@@ -17,7 +17,7 @@ const themeStore = useThemeStore()
 .title {
     font-size: clamp(0.5rem, 5vw, 1.5rem);
     font-weight: 600;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     // background-size: 100%;
     // background-clip: text;
     // -moz-background-clip: text;

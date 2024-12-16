@@ -18,6 +18,7 @@
             class="drawer__btn--close"
           ></v-btn>
         </div>
+        <NavbarSideBar />
       </div>
     </v-navigation-drawer>
     <div v-if="isMobile" class="navigation__mobile">

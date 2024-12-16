@@ -1,7 +1,17 @@
 <template>
   <section>
     <div>
-      <TextTitle :value="'Top catégories'" />
+      <TextTitle :value="'Dernières annonces'" />
+    </div>
+    <div class="text-end">
+      <v-btn
+        variant="text"
+        append-icon="mdi-chevron-right"
+        class="text-none"
+        :ripple="false"
+      >
+        Voir plus d'annonces
+      </v-btn>
     </div>
     <div class="listing--container py-4">
       <CardListing v-for="listing in listings" :key="listing.id" class="listing--card" />
@@ -22,14 +32,14 @@ import listings from "~/data/listings.json";
 <style lang="scss" scoped>
 .listing--container {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
+  flex-wrap: wrap;
+//   overflow: auto;
   justify-content: flex-start;
   gap: 1rem;
 
   .listing--card {
     flex: auto;
-    min-width: 256px;
+    width: 256px;
     border-radius: 0.5rem;
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="form mx-auto d-flex flex-column ga-6">
     <v-card class="pa-6 bg-transparent" flat>
-      <TextTitle :title="'Créer un compte'" />
+      <TextTitle :value="'Créer un compte'" />
       <div class="d-flex flex-column ga-3">
         <!-- Informations utilisateur -->
         <v-text-field
@@ -34,38 +34,6 @@
           :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append-inner="showPassword = !showPassword"
           :rules="passwordRules"
-        ></v-text-field>
-        <!-- Adresse -->
-        <TextTitle :title="'Adresse'" class="mt-4" />
-        <v-text-field
-          v-model="address.houseNumber"
-          label="Numéro de maison"
-          prepend-icon="mdi-home"
-          variant="outlined"
-        ></v-text-field>
-        <v-text-field
-          v-model="address.street"
-          label="Rue"
-          prepend-icon="mdi-road"
-          variant="outlined"
-        ></v-text-field>
-        <v-text-field
-          v-model="address.zipCode"
-          label="Code postal"
-          prepend-icon="mdi-map-marker"
-          variant="outlined"
-        ></v-text-field>
-        <v-text-field
-          v-model="address.city"
-          label="Ville"
-          prepend-icon="mdi-city"
-          variant="outlined"
-        ></v-text-field>
-        <v-text-field
-          v-model="address.country"
-          label="Pays"
-          prepend-icon="mdi-earth"
-          variant="outlined"
         ></v-text-field>
         <div class="d-flex justify-end ga-3">
           <v-btn
@@ -120,19 +88,10 @@ const user = ref({
   password: "",
 });
 
-const address = ref({
-  houseNumber: "",
-  street: "",
-  zipCode: "",
-  city: "",
-  country: "",
-});
-
 // Fonction d'enregistrement
 const register = async () => {
   const payload = {
     user: user.value,
-    address: address.value,
   };
   // await registerUser(payload);
   if (authenticated.value) {

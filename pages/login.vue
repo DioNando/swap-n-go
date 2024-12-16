@@ -1,7 +1,7 @@
 <template>
   <div class="login d-flex">
     <div class="d-flex align-center justify-center flex-column">
-      <div class="form-container">
+      <div class="form-container mt-0 mt-md-12 my-8">
         <!-- <v-btn
           class="text-none"
           variant="text"
@@ -15,7 +15,7 @@
               : "Pas encore inscrit ? Créez un compte"
           }}
         </v-btn> -->
-        <v-btn
+        <!-- <v-btn
           v-if="!showRegister"
           class="text-none ms-2"
           variant="text"
@@ -24,13 +24,22 @@
         >
           Pas encore inscrit ? Créez un compte
         </v-btn>
-        <v-btn v-else @click="toggleForm" flat variant="text" :ripple="false" prepend-icon="mdi-chevron-left" class="text-none ms-2">Se connecter </v-btn>
+        <v-btn v-else @click="toggleForm" flat variant="text" :ripple="false" prepend-icon="mdi-chevron-left" class="text-none ms-2">Se connecter </v-btn> -->
+
         <FormLogin v-if="!showRegister" />
         <FormRegister v-else />
+        <div v-if="!showRegister" @click="toggleForm" class="text-center">
+          Pas encore inscrit ?
+          <span class="text-primary text__pointer">Créez un compte</span>
+        </div>
+        <div v-else @click="toggleForm" class="text-center">
+          Vous-avez déja un compte ?
+          <span class="text-primary text__pointer">Connectez-vous</span>
+        </div>
       </div>
     </div>
-    <div class="px-5">
-      <UiAside />
+    <div class="px-5 d-md-block d-none">
+      <UiLogin />
     </div>
   </div>
 </template>
@@ -64,6 +73,10 @@ definePageMeta({
 .form-container {
   width: 100%;
   max-width: 528px;
-  margin-top: 5rem;
+  // margin-top: 5rem;
+}
+
+.text__pointer {
+  cursor: pointer;
 }
 </style>
