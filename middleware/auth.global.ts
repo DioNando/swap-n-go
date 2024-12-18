@@ -1,21 +1,34 @@
-export default defineNuxtRouteMiddleware((to) => {
-  const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive
-  const token = useCookie('token'); // get token from cookies
+export default defineNuxtRouteMiddleware(async (to) => {
+  const { authenticated } = storeToRefs(useAuthStore()); // Reactive store state
+  const token = useCookie('access_token'); // Get token from cookies
 
   if (token.value) {
-    // check if value exists
-    authenticated.value = true; // update the state to authenticated
+    // Verify token validity (optional)
+    try {
+      const config = useRuntimeConfig();
+      await $fetch(`${config.public.apiUrl}/verify-token`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token.value}`,
+        },
+      });
+      authenticated.value = true; // Token is valid
+    } catch (error) {
+      console.error('Invalid token:', error);
+      authenticated.value = false;
+      token.value = null;
+      return navigateTo('/login');
+    }
   }
 
-  // if token exists and url is /login redirect to homepage
-  if (token.value && to?.name === 'login') {
+  // Redirect authenticated users from /login to /
+  if (authenticated.value && to?.name === 'login') {
     return navigateTo('/');
   }
 
-  // if token doesn't exist redirect to log in
-  // if (!token.value && to?.name !== 'login') { // FIXME: Discomment this if you wanna use router guard
-  if (token.value && to?.name !== 'login') {
-    abortNavigation();
+  // Redirect unauthenticated users to /login
+  if (!authenticated.value && to?.name !== 'login') {
+    abortNavigation(); // Prevent further navigation
     return navigateTo('/login');
   }
 });

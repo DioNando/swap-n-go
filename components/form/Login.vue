@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-column ga-6">
     <v-card class="pa-6 bg-transparent" flat>
-      <TextTitle :value="'Connectez-vous'" />
+      <TextTitle :value="'Connectez-vous'" class="mb-3" />
       <div class="d-flex flex-column ga-3">
         <v-text-field
           v-model="user.email"
@@ -62,8 +62,6 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-const themeStore = useThemeStore();
-
 const router = useRouter();
 const showPassword = ref(false);
 
@@ -78,7 +76,6 @@ const passwordRules = [
     v.length >= 6 || "Le mot de passe doit comporter au moins 6 caractères",
 ];
 
-import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
 import { useAuthStore } from "~/stores/auth"; // import the auth store we just created
 
 const { authenticateUser } = useAuthStore(); // use authenticateUser action from  auth store
@@ -86,8 +83,8 @@ const { authenticateUser } = useAuthStore(); // use authenticateUser action from
 const { authenticated, loading, error } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
 const user = ref({
-  email: "admin@project.net",
-  password: "password",
+  email: "user@example.com",
+  password: "password123",
 });
 
 const login = async () => {

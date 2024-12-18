@@ -7,7 +7,7 @@
       <v-col cols="12">
         <v-text-field
           label="Email"
-          prepend-icon="mdi-account"
+          prepend-icon="mdi-email"
           required
           variant="outlined"
         ></v-text-field>

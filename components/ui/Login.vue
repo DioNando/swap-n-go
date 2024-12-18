@@ -1,6 +1,5 @@
 <template>
   <section>
-    <TextsTitle :title="'Aside.'" />
     <div class="cards">
       <CardLogin
         v-for="(item, index) in selectedPhotos"

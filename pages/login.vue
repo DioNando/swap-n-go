@@ -38,9 +38,9 @@
         </div>
       </div>
     </div>
-    <div class="px-5 d-md-block d-none">
+    <!-- <div class="px-5 d-md-block d-none">
       <UiLogin />
-    </div>
+    </div> -->
   </div>
 </template>
 

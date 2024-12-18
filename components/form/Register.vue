@@ -1,7 +1,7 @@
 <template>
   <div class="form mx-auto d-flex flex-column ga-6">
     <v-card class="pa-6 bg-transparent" flat>
-      <TextTitle :value="'Créer un compte'" />
+      <TextTitle :value="'Créer un compte'" class="mb-3" />
       <div class="d-flex flex-column ga-3">
         <!-- Informations utilisateur -->
         <v-text-field

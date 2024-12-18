@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
 .cta {
   position: relative;
-  height: 10rem;
+  height: 15rem;
 
   &__image {
     border-radius: 0.5rem;
@@ -35,7 +35,7 @@
   }
 
   &__text {
-    font-size: 1.5rem; /* Ajuste la taille selon la typographie globale */
+    font-size: 2.5rem; /* Ajuste la taille selon la typographie globale */
     font-weight: 500;
   }
 }
