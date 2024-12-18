@@ -4,8 +4,7 @@ export interface UserInterface {
   name: string;
   email: string;
   phoneNumber: string;
-  password: string;
   rating: number; // Float
   numberOfReviews: number;
-  profilePictureUrl: string;
+  profilePictureUrl?: string;
 }

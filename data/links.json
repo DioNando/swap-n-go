@@ -1,6 +1,6 @@
 [
   {
-    "title": "Mes recherches",
+    "title": "Notifications",
     "link": "/",
     "icon": "mdi-bell"
   },
@@ -15,8 +15,8 @@
     "icon": "mdi-message-processing"
   },
   {
-    "title": "Se connecter",
-    "link": "/login",
+    "title": "Mon profil",
+    "link": "/users",
     "icon": "mdi-account"
   }
 ]

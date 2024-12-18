@@ -1,3 +1,16 @@
+import { mapTokenToUser } from "#build/imports";
+import { type UserInterface } from "~/interfaces/user/user.interface";
+
+interface UserPayloadInterface {
+  email: string;
+  password: string;
+}
+
+interface AccessTokenInterface {
+  access_token: string;
+  status?: string;
+}
+
 export const useAuthStore = defineStore("authStore", {
   state: () => ({
     authenticated: false,
@@ -38,9 +51,11 @@ export const useAuthStore = defineStore("authStore", {
             secure: process.env.NODE_ENV === "production",
           });
           access_token.value = data.access_token;
-
-          console.log("Token reçu :", data.access_token);
           this.authenticated = true;
+          this.user = mapTokenToUser(access_token.value);
+
+          // Redirection vers la page d'accueil
+          navigateTo("/");
         } else {
           this.error = "Email ou mot de passe incorrect.";
         }
@@ -82,7 +97,7 @@ export const useAuthStore = defineStore("authStore", {
         // Réinitialisation de l'état utilisateur
         this.authenticated = false;
         this.user = null;
-        token.value = null;
+        useCookie("access_token").value = null; // Effacer le cookie
 
         // Redirection vers la page de connexion
         navigateTo("/login");
@@ -98,15 +113,19 @@ export const useAuthStore = defineStore("authStore", {
       if (access_token) {
         try {
           const config = useRuntimeConfig();
-          const response:any = await $fetch(`${config.public.apiUrl}/verify-token`, {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${access_token}`,
-            },
-          });
+          const response: any = await $fetch(
+            `${config.public.apiUrl}/verify-token`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${access_token}`,
+              },
+            }
+          );
 
           if (response.valid) {
             this.authenticated = true;
+            this.user = mapTokenToUser(access_token);
             // Optionnel : Vous pouvez ici charger les données utilisateur si nécessaire
             // Example: this.user = await fetchUserData(access_token);
             console.log("Token validé et utilisateur authentifié.");

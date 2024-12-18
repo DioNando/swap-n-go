@@ -20,7 +20,7 @@
         <p>Made with <v-icon icon="mdi-heart"></v-icon></p>
         <p>{{ new Date().getFullYear() }} © Dio_Nando</p>
       </div>
-      <ButtonsScrollToTop class="d-none d-sm-block" />
+      <!-- <ButtonsScrollToTop class="d-none d-sm-block" /> -->
     </v-footer>
   </footer>
 </template>

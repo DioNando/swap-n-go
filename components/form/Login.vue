@@ -41,7 +41,7 @@
             append-icon="mdi-login"
             text="Sign In"
             color="primary"
-            @click="login"
+            @click="authenticateUser(user)"
             :loading="loading"
             >Se connecter</v-btn
           >
@@ -78,21 +78,14 @@ const passwordRules = [
 
 import { useAuthStore } from "~/stores/auth"; // import the auth store we just created
 
-const { authenticateUser } = useAuthStore(); // use authenticateUser action from  auth store
+const { authenticateUser } = useAuthStore();
 
-const { authenticated, loading, error } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+const { loading, error } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
 const user = ref({
   email: "user@example.com",
   password: "password123",
 });
-
-const login = async () => {
-  await authenticateUser(user.value);
-  if (authenticated) {
-    router.push("/");
-  }
-};
 </script>
 
 <style lang="scss" scoped>
