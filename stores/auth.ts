@@ -1,15 +1,3 @@
-import { type UserInterface } from "~/interfaces/user/user.interface";
-
-interface UserPayloadInterface {
-  email: string;
-  password: string;
-}
-
-interface AccessTokenInterface {
-  access_token: string;
-  status?: string;
-}
-
 export const useAuthStore = defineStore("authStore", {
   state: () => ({
     authenticated: false,
@@ -67,6 +55,7 @@ export const useAuthStore = defineStore("authStore", {
         this.loading = false;
       }
     },
+
     // LOGOUT
     async logUserOut() {
       const token = useCookie("access_token");
@@ -101,22 +90,35 @@ export const useAuthStore = defineStore("authStore", {
         console.error("Erreur lors de la déconnexion :", error);
       }
     },
-    // INITIALISATION DU STORE
-    initializeStore() {
+
+    // INITIALISATION DU STORE ET VERIFICATION DU TOKEN
+    async initializeStore() {
       const access_token = useCookie("access_token").value;
 
       if (access_token) {
         try {
-          // Logique supplémentaire pour valider le token côté client si nécessaire
-          console.log("Token détecté :", access_token);
+          const config = useRuntimeConfig();
+          const response:any = await $fetch(`${config.public.apiUrl}/verify-token`, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${access_token}`,
+            },
+          });
 
-          this.authenticated = true;
-          // Vous pouvez ajouter un appel à l'API pour valider le token
-          // Exemple : const user = await fetchUserData(access_token);
-          // this.user = user;
+          if (response.valid) {
+            this.authenticated = true;
+            // Optionnel : Vous pouvez ici charger les données utilisateur si nécessaire
+            // Example: this.user = await fetchUserData(access_token);
+            console.log("Token validé et utilisateur authentifié.");
+          } else {
+            console.warn("Token invalide, redirection vers login.");
+            this.authenticated = false;
+            useCookie("access_token").value = null; // Effacer le cookie
+          }
         } catch (error) {
-          console.error("Erreur lors de l'initialisation du store :", error);
+          console.error("Erreur lors de la vérification du token :", error);
           this.authenticated = false;
+          useCookie("access_token").value = null; // Effacer le cookie
         }
       } else {
         console.warn("Aucun token détecté.");

@@ -10,21 +10,22 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.14.1592",
-    "vue": "latest",
-    "vue-router": "latest",
+    "@hypernym/nuxt-anime": "^2.1.1",
     "@mdi/font": "^7.4.47",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@pinia/nuxt": "^0.6.0",
-    "nuxt-aos": "^1.2.2",
-    "@hypernym/nuxt-anime": "^2.1.1",
     "crypto-js": "^4.2.0",
     "destr": "^2.0.3",
+    "jwt-decode": "^4.0.0",
+    "nuxt": "^3.14.1592",
+    "nuxt-aos": "^1.2.2",
     "oauth-1.0a": "^2.2.6",
     "pinia": "^2.2.5",
     "sass": "^1.77.6",
     "vite-plugin-vuetify": "^2.0.3",
+    "vue": "latest",
+    "vue-router": "latest",
     "vuetify": "^3.6.10"
   }
 }
