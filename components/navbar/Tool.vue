@@ -12,6 +12,18 @@
         {{ l.title }}
       </v-btn>
     </NuxtLink>
+    <NuxtLink :to="`/users/${user?.id}`">
+      <v-btn
+        prepend-icon="mdi-account"
+        variant="plain"
+        stacked
+        size="small"
+        class="text-none"
+        :ripple="false"
+      >
+        {{ user?.name }}
+      </v-btn>
+    </NuxtLink>
     <v-btn
       prepend-icon="mdi-logout"
       variant="plain"
@@ -28,7 +40,9 @@
 
 <script setup lang="ts">
 import links from "~/data/links.json";
-import { useAuthStore } from "~/stores/auth"; // import the auth store we just created
+import { useAuthStore } from "~/stores/auth"; 
+
+const { user } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
 const { logUserOut } = useAuthStore();
 </script>

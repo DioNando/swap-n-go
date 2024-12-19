@@ -2,7 +2,7 @@
   <div class="cta">
     <img src="/assets/img/landscape.png" alt="Illustration de vente" class="cta__image" />
     <div class="cta__content">
-      <div class="cta__text">
+      <div class="cta__text text-white">
         C'est le moment de vendre
       </div>
       <ButtonAddListing />

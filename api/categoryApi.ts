@@ -62,7 +62,7 @@ export const addCategory = async (
         Authorization: `Bearer ${token.value}`,
       },
       body: {
-        description: data.description,
+        name: data.name,
         // Attributs category
       },
     });
@@ -90,7 +90,7 @@ export const editCategory = async (
           Authorization: `Bearer ${token.value}`,
         },
         body: {
-          description: data.description,
+          description: data.name,
           // Attributs category
         },
       }

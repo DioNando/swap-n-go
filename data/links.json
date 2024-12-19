@@ -5,18 +5,8 @@
     "icon": "mdi-bell"
   },
   {
-    "title": "Favoris",
-    "link": "/users",
-    "icon": "mdi-heart"
-  },
-  {
     "title": "Messages",
     "link": "/messages",
     "icon": "mdi-message-processing"
-  },
-  {
-    "title": "Mon profil",
-    "link": "/users",
-    "icon": "mdi-account"
   }
 ]

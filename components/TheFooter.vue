@@ -1,18 +1,11 @@
 <template>
-  <footer>
+  <footer class="mt-6">
+    <!-- <IllustrationBars id="footer__bars" class="d-none d-md-block" /> -->
     <v-footer
       class="footer__elements d-flex flex-column"
       :class="!theme.isDark && 'bg-primary'"
     >
       <div class="link">
-        <NuxtLink
-          v-for="l in links"
-          :key="l.title"
-          :to="l.link"
-          class="router-link"
-        >
-          {{ l.title }}
-        </NuxtLink>
         <ButtonTheme />
       </div>
       <div class="text-body-1">Lorem ipsum dolor sit amet.</div>

@@ -39,7 +39,7 @@
         <div class="d-flex justify-end ga-3">
           <v-btn
             append-icon="mdi-login"
-            text="Sign In"
+            text="Se connecter"
             color="primary"
             @click="authenticateUser(user)"
             :loading="loading"
@@ -59,28 +59,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-const showPassword = ref(false);
-
-const emailRules = [
-  (v: any) => !!v || "L'email est requis",
-  (v: any) => /.+@.+\..+/.test(v) || "L'email doit être valide",
-];
-
-const passwordRules = [
-  (v: any) => !!v || "Le mot de passe est requis",
-  (v: any) =>
-    v.length >= 6 || "Le mot de passe doit comporter au moins 6 caractères",
-];
-
-import { useAuthStore } from "~/stores/auth"; // import the auth store we just created
-
 const { authenticateUser } = useAuthStore();
-
 const { loading, error } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+
+const showPassword = ref(false);
 
 const user = ref({
   email: "user@example.com",

@@ -1,10 +1,5 @@
 import { mapTokenToUser } from "#build/imports";
-import { type UserInterface } from "~/interfaces/user/user.interface";
-
-interface UserPayloadInterface {
-  email: string;
-  password: string;
-}
+import type { UserInterface, UserPayloadInterface } from "~/interfaces/user/user.interface";
 
 interface AccessTokenInterface {
   access_token: string;
@@ -33,7 +28,7 @@ export const useAuthStore = defineStore("authStore", {
         this.error = null;
 
         const data = await $fetch<AccessTokenInterface>(
-          `${config.public.apiUrl}/login`,
+          `${config.public.apiUrl}/auth/login`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -82,7 +77,7 @@ export const useAuthStore = defineStore("authStore", {
       }
 
       try {
-        const res: any = await $fetch(`${config.public.apiUrl}/logout`, {
+        const res: any = await $fetch(`${config.public.apiUrl}/auth/logout`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -114,7 +109,7 @@ export const useAuthStore = defineStore("authStore", {
         try {
           const config = useRuntimeConfig();
           const response: any = await $fetch(
-            `${config.public.apiUrl}/verify-token`,
+            `${config.public.apiUrl}/auth/verify-token`,
             {
               method: "POST",
               headers: {

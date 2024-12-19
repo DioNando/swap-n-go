@@ -1,6 +1,6 @@
 // textUtils.ts
 
-export function capitalizeName(name:string) {
+export function capitalizeName(name: string) {
   const mots = name.split(" ");
   const motsFormattes = mots.map(
     (mot) => mot.charAt(0).toUpperCase() + mot.slice(1)
@@ -9,14 +9,17 @@ export function capitalizeName(name:string) {
   return motsFormattes.join(" ");
 }
 
-export function separateName(name:string) {
+export function separateName(name: string) {
   const mots = name.split("-");
   return mots.join(" ");
 }
 
-export function getNameInitials(fullName:string) {
+export function getNameInitials(fullName: string): string {
   return fullName
     .split(" ")
-    .map((word) => word[0].toUpperCase())
+    .filter((word) => word.length > 0) // S'assure de ne pas inclure d'espaces vides
+    .slice(0, 2) // Ne garde que les deux premiers mots
+    .map((word) => word[0].toUpperCase()) // Prend la première lettre en majuscule
     .join("");
 }
+
